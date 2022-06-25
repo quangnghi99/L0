@@ -1,6 +1,6 @@
 --- 
 - name: install Tomcat server 
-  hosts: webservers 
+  hosts: tomcat 
   tasks: 
     - name: Update system 
       yum: 
