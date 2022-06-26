@@ -1,8 +1,8 @@
-import paramiko
+from paramiko import SSHClient, AutoAddPolicy
 #___ssh to Ansible machine
-ssh = paramiko.SSHClient()
-ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect(hostname='3.123.142.96', timeout=3, username='ec2-user', key_filename='/home/anhdo/TH_terraform/dev-vpc_test/ssh-keys/anhdo-key')
+ssh = SSHClient()
+ssh.set_missing_host_key_policy(AutoAddPolicy())
+ssh.connect(hostname='3.123.142.96', port=22 ,timeout=3, username='ec2-user', key_filename='/home/ec2-user/L0/nghi_tf_key.pub')
 
 #___copy playbook files from local machine to Ansible machine
 localpath = "/home/anhdo/TH_terraform/dev-vpc_test/user_password.xml"
