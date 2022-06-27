@@ -1,3 +1,5 @@
+aws configure
+
 #git
 sudo yum install git -y
 #Terraform 
